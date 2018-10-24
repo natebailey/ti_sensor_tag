@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://use.fontawesome.com/4391b3a772.js"></script>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src gap://ready file://* *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *">-->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' data: blob: 'unsafe-inline' 'unsafe-eval' wss://*.devicewise.com gap://ready">
+    
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>TI Sensor Tag</title>
+</head>
+
+<body>
+    <div class="app">
+		<div id="modalPage" style="display:none;">
+			<div id="modalRadar" style="display:none;" class="modal">
+				<div id="radar" style="display:none"></div>
+			</div>
+			<div id="modalLoading" style="display:none;" class="modal"><div class="loader">Loading...</div>Loading...</div>
+			<div id="modalMessage" style="display:none;" class="modal">Message</div>
+		</div>
+		<div id="mainPage">
+			<br><br>
+			<img id="mainImage" src="./img/logoTelit.jpg"/>
+			<input id="name" placeholder="Loading..."></input><button id="nameButton" onclick="publishName()">Update Name</button>
+			<button id="refreshButton" onclick="app.refreshDeviceList()">Scan for Sensor Tag</button>
+			<br>
+			<ul id="deviceList">
+			</ul>
+			<div id="signature">Telit IoT Platforms<br>Andres Camarena, David De La Rosa<br>V3.0, demo-ti.devicewise.com</div><br>
+		</div>
+		<div id="detailPage">
+			<br>
+			<button id="disconnectButton">Disconnect</button>
+			<br><br>
+			
+			<div class="container">
+				<div id="cube">
+					<figure class="front"><img id="logo" src="./img/telit.png" /></figure>
+					<figure class="back"></figure>
+					<figure class="right"></figure>
+					<figure class="left"></figure>
+					<figure class="top"></figure>
+					<figure class="bottom"></figure>
+				</div>
+			</div>
+			
+			<div id="accelerometerData">waiting...</div>
+			<div id="barometerData">waiting...</div>
+			<div id="buttonState"></div>
+			<br/>
+		</div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/sketch.min.js"></script>
+    <script src="js/prefixfree.min.js"></script>
+    <script type="text/javascript" src="js/radar.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="js/mqttws31.js"></script>
+    <script type="text/javascript" src="js/mqttoverwebsockets.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+		console.log("initialize");
+        app.initialize();
+    </script>
+</body>
+
+</html>

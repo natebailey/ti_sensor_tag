@@ -1,0 +1,11 @@
+{
+  "name": "telit-sensor-tag",
+  "version": "4.0.2",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phonegap/phonegap-app-hello-world.git"
+  },
+  "author": "Telit",
+  "license": "Apache-2.0.0"
+}

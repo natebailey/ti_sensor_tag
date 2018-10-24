@@ -1,0 +1,176 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Compass\"><param name=\"ios-package\" value=\"CDVCompass\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Geolocation\"><param name=\"ios-package\" value=\"CDVLocation\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"InAppBrowser\"><param name=\"ios-package\" value=\"CDVInAppBrowser\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SplashScreen\"><param name=\"ios-package\" value=\"CDVSplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ],
+                    "/widget": [
+                        {
+                            "xml": "<feature name=\"BLE\"><param name=\"ios-package\" onload=\"true\" value=\"BLECentralPlugin\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Info.plist": {
+                "parents": {
+                    "NSLocationWhenInUseUsageDescription": [
+                        {
+                            "xml": "<string />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.telitti"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "com.telitti"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.telitti"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.telitti"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.telitti"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+        },
+        "cordova-plugin-ble-central": {
+            "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/cordova-plugin-device/www/device.js",
+            "id": "cordova-plugin-device.device",
+            "pluginId": "cordova-plugin-device",
+            "clobbers": [
+                "device"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device-orientation/www/CompassError.js",
+            "id": "cordova-plugin-device-orientation.CompassError",
+            "pluginId": "cordova-plugin-device-orientation",
+            "clobbers": [
+                "CompassError"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device-orientation/www/CompassHeading.js",
+            "id": "cordova-plugin-device-orientation.CompassHeading",
+            "pluginId": "cordova-plugin-device-orientation",
+            "clobbers": [
+                "CompassHeading"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-device-orientation/www/compass.js",
+            "id": "cordova-plugin-device-orientation.compass",
+            "pluginId": "cordova-plugin-device-orientation",
+            "clobbers": [
+                "navigator.compass"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-geolocation/www/Coordinates.js",
+            "id": "cordova-plugin-geolocation.Coordinates",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "Coordinates"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
+            "id": "cordova-plugin-geolocation.PositionError",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "PositionError"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-geolocation/www/Position.js",
+            "id": "cordova-plugin-geolocation.Position",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "Position"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-geolocation/www/geolocation.js",
+            "id": "cordova-plugin-geolocation.geolocation",
+            "pluginId": "cordova-plugin-geolocation",
+            "clobbers": [
+                "navigator.geolocation"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+            "id": "cordova-plugin-inappbrowser.inappbrowser",
+            "pluginId": "cordova-plugin-inappbrowser",
+            "clobbers": [
+                "cordova.InAppBrowser.open",
+                "window.open"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+            "id": "cordova-plugin-splashscreen.SplashScreen",
+            "pluginId": "cordova-plugin-splashscreen",
+            "clobbers": [
+                "navigator.splashscreen"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-ble-central/www/ble.js",
+            "id": "cordova-plugin-ble-central.ble",
+            "pluginId": "cordova-plugin-ble-central",
+            "clobbers": [
+                "ble"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-device": "1.1.2",
+        "cordova-plugin-device-orientation": "1.0.3",
+        "cordova-plugin-geolocation": "2.1.0",
+        "cordova-plugin-inappbrowser": "1.3.0",
+        "cordova-plugin-splashscreen": "3.2.2",
+        "cordova-plugin-compat": "1.0.0",
+        "cordova-plugin-ble-central": "1.1.1"
+    }
+}
